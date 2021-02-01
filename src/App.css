@@ -26,9 +26,14 @@
 }
 
 .Card {
+  cursor: pointer;
   margin: 10px;
   border-radius: 5px;
   background-color: #ffffff;
+}
+
+.Card:hover {
+  background-color: #f7f7f7;
 }
 
 .Card img {

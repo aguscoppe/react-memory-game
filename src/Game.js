@@ -1,35 +1,30 @@
 import React, { Component } from "react";
 import Card from "./Card";
+import hidden from "./img/hidden.png";
+import { createGame } from "./helpers";
 
 export default class Game extends Component {
-  createRandomSelection(n) {
-    let indexNumbers = [];
-    while (indexNumbers.length !== n * 2) {
-      let randomNum = Math.floor(Math.random() * n);
-      if (
-        indexNumbers.indexOf(randomNum) === -1 ||
-        indexNumbers.indexOf(randomNum) === indexNumbers.lastIndexOf(randomNum)
-      ) {
-        indexNumbers.push(randomNum);
-      }
-    }
-    return indexNumbers;
+  constructor(props) {
+    super(props);
+    this.state = { data: [], showing: [], displayed: [] };
+    this.showImg = this.showImg.bind(this);
   }
-  createGame() {
-    const randomData = [];
-    const amount = this.props.gameData.length;
-    const selection = this.createRandomSelection(amount);
-    selection.forEach((index) => randomData.push(this.props.gameData[index]));
-    return randomData;
+
+  componentDidMount() {
+    this.setState({ data: createGame(this.props.gameData) });
+  }
+
+  showImg(id) {
+    this.setState({ displayed: [...this.state.displayed, id] });
+    console.log(this.state.displayed);
   }
   render() {
-    const data = this.createGame();
-    return (
-      <div className="Game">
-        {data.map((element) => (
-          <Card img={element.img} />
-        ))}
-      </div>
-    );
+    const cards = this.state.data.map((element) => {
+      let imgData = this.state.displayed.includes(element.id)
+        ? element.img
+        : hidden;
+      return <Card imgSrc={imgData} showImg={this.showImg} id={element.id} />;
+    });
+    return <div className="Game">{cards}</div>;
   }
 }
