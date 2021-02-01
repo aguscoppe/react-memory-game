@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import ChooseDifficulty from "./ChooseDifficulty";
 import Game from "./Game.js";
-import "./App.css";
 import gameData from "./data";
+import "./App.css";
 
 class App extends Component {
   constructor() {

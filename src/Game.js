@@ -16,7 +16,6 @@ export default class Game extends Component {
 
   showImg(id) {
     this.setState({ displayed: [...this.state.displayed, id] });
-    console.log(this.state.displayed);
   }
   render() {
     const cards = this.state.data.map((element) => {

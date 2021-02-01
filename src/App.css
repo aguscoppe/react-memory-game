@@ -5,14 +5,13 @@
 }
 
 .App {
+  background-color: #8ac6ff;
   height: 100vh;
   width: 100vw;
-  background-color: #8ac6ff;
 }
 
 .ChooseDifficulty {
   text-align: center;
-  margin: auto;
 }
 
 .Game {
