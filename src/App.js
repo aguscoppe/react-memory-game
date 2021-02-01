@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import ChooseDifficulty from "./ChooseDifficulty";
 import Game from "./Game.js";
 import "./App.css";
+import gameData from "./data";
 
 class App extends Component {
   constructor() {
@@ -20,7 +21,7 @@ class App extends Component {
           {this.state.difficulty === null ? (
             <ChooseDifficulty changeDifficulty={this.changeDifficulty} />
           ) : (
-            <Game difficulty={this.state.difficulty} />
+            <Game gameData={gameData[this.state.difficulty]} />
           )}
         </Route>
       </div>
