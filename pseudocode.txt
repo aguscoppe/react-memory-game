@@ -1,0 +1,24 @@
+COMPONENTS:
+
+APP -> GAME -> CARD
+
+---
+App:
+- Choose difficulty + Play button
+(Easy:   10 [20 =  5x4]) 
+(Medium: 16 [32 =  8x4]) 
+(Hard:   24 [48 = 12x4])
+
+Game:
+- State: {hiddenCards: props, shownCards: [], showing: []}
+- Recibimos por props objeto con data del juego y con un map mostramos <Card/> components... si están en shownCards, se mostrará la imagen revelada, sino, se muestra el lomo de la carta
+- Cuando hacemos click en carta, se comparan (si ya hay dos cartas dadas vuelta, el click queda disabled hasta que pasan 2 segundos)
+- Se comparan las dos cartas en "showing" para ver si su id es el mismo... si es el mismo, se agregan a shownCards
+
+Card:
+- "Dumb" component whose only function is to reveal image onClick
+
+---
+CREDIT:
+
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

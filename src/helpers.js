@@ -18,7 +18,7 @@ export function createGame(gameData) {
   const amount = gameData.length;
   const selection = createRandomSelection(amount);
   selection.forEach((index) =>
-    randomData.push({ id: uuidv4(), img: gameData[index] })
+    randomData.push({ id: uuidv4(), img: gameData[index], number: index })
   );
   return randomData;
 }

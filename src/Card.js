@@ -6,7 +6,7 @@ export default class Card extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.props.showImg(this.props.id);
+    this.props.updateGame(this.props.id, this.props.number);
   }
   render() {
     return (

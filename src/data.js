@@ -38,8 +38,8 @@ const gameData = {
     walrus,
     squid,
   ],
-  medium: [{ id: "11", img: flamingo }],
-  hard: [{ id: "27", img: monkey }],
+  medium: [flamingo],
+  hard: [monkey],
 };
 
 export default gameData;
