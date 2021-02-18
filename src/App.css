@@ -2,33 +2,107 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.App {
-  background-color: #8ac6ff;
-  height: 100vh;
-  width: 100vw;
+body {
+  background-color: #77def1;
 }
 
 .ChooseDifficulty {
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #5595c1;
+  width: fit-content;
   text-align: center;
-}
-
-.Game {
-  height: 100vh;
-  width: 100vw;
+  padding: 25px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
+  margin: 25vh auto;
+}
+
+.ChooseDifficulty h1 {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.ChooseDifficulty form select {
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.ChooseDifficulty button {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: #f53473;
+  color: #ffffff;
+}
+
+.ChooseDifficulty button:hover {
+  background-color: #db2d67;
+}
+
+/*.Game-link {
+  text-align: center;
+  margin: 15px;
+}
+
+.Game-link a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #f53473;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.Game-link a:hover {
+  background-color: #db2d67;
+}*/
+
+.Game {
   margin: 0 auto;
+  height: 100vh;
+}
+
+.Game.easy {
+  max-width: 400px;
+}
+
+.Game.medium {
+  max-width: 500px;
+}
+
+.Game.hard {
+  max-width: 550px;
 }
 
 .Card {
-  cursor: pointer;
   margin: 10px;
   border-radius: 5px;
   background-color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.easy .Card {
+  max-width: 20%;
+  max-height: 20%;
+}
+
+.medium .Card {
+  max-width: 16%;
+  max-height: 16%;
+}
+
+.hard .Card {
+  max-width: 12%;
+  max-height: 12%;
 }
 
 .Card:hover {
@@ -36,6 +110,9 @@
 }
 
 .Card img {
+  display: block;
   padding: 20px;
-  height: 100px;
+  /* max-width: 100px;
+  height: 100px;*/
+  object-fit: scale-down;
 }

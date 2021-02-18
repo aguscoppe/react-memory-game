@@ -1,18 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Card extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    this.props.updateGame(this.props.id, this.props.number);
-  }
-  render() {
-    return (
-      <div className="Card" onClick={this.handleClick}>
-        <img src={this.props.imgSrc} />
-      </div>
-    );
-  }
-}
+const Card = (props) => {
+  const handleClick = () => {
+    props.updateGame(props.id, props.number);
+  };
+
+  return (
+    <img
+      className="Card"
+      src={props.imgSrc}
+      onClick={handleClick}
+      alt="hidden animal"
+    />
+  );
+};
+
+export default Card;
